@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light" />
+  <title>Kylan Huynh — Dossier 001</title>
+  <meta name="description" content="Kylan Huynh — Data Science, UC San Diego. Sports analytics, research, and quietly built software." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fafaf9'/%3E%3Ctext x='4' y='22' font-family='IBM Plex Mono, monospace' font-size='18' font-weight='700' fill='%230a0a0a'%3EKH%3C/text%3E%3Crect x='25' y='8' width='4' height='4' fill='%237a1a1a'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       Scoreboard topbar — feels like a stadium status line
+       ═══════════════════════════════════════════════════════════ -->
+  <header class="scoreboard">
+    <div class="scoreboard__cell">
+      <span class="cell__label">LOC</span>
+      <span class="cell__value">LA&nbsp;JOLLA,&nbsp;CA</span>
+    </div>
+    <div class="scoreboard__cell">
+      <span class="cell__label">TIME</span>
+      <span class="cell__value" id="clock">--:--:--&nbsp;PT</span>
+    </div>
+    <div class="scoreboard__cell">
+      <span class="cell__label">STATUS</span>
+      <span class="cell__value"><span class="dot dot--live"></span>ONLINE</span>
+    </div>
+    <nav class="scoreboard__nav" aria-label="Primary">
+      <a href="#dossier">01&nbsp;dossier</a>
+      <a href="#work">02&nbsp;work</a>
+      <a href="#log">03&nbsp;log</a>
+      <a href="#stack">04&nbsp;stack</a>
+      <a href="#now">05&nbsp;now</a>
+      <a href="#contact">06&nbsp;contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         01 · DOSSIER — personal data sheet hero
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="dossier" id="dossier">
+      <div class="section-bar">
+        <span class="section-bar__num">§ 01</span>
+        <span class="section-bar__label">DOSSIER</span>
+        <span class="section-bar__rule"></span>
+        <span class="section-bar__meta">FILE&nbsp;001 · KH</span>
+      </div>
+
+      <div class="dossier__layout">
+
+        <div class="dossier__name">
+          <h1>
+            <span class="dossier__first">Kylan</span>
+            <span class="dossier__last">Huynh.</span>
+          </h1>
+          <p class="dossier__subtitle">
+            Data scientist in training. Scaling personal interests into
+            broader patterns — the kind of work where curiosity itself
+            becomes the dataset.
+          </p>
+        </div>
+
+        <div class="dossier__sheet">
+          <dl class="datasheet">
+            <div class="datasheet__row"><dt>NAME</dt>             <dd>Kylan Huynh</dd></div>
+            <div class="datasheet__row"><dt>YEAR</dt>             <dd>Class of 2028</dd></div>
+            <div class="datasheet__row"><dt>MAJOR</dt>            <dd>Data Science, B.S.</dd></div>
+            <div class="datasheet__row"><dt>INSTITUTION</dt>      <dd>UC San Diego</dd></div>
+            <div class="datasheet__row"><dt>FOCUS</dt>            <dd>Sports analytics · Statistics · ML</dd></div>
+            <div class="datasheet__row"><dt>STATUS</dt>           <dd>Sophomore <span class="arrow">→</span> Junior</dd></div>
+            <div class="datasheet__row"><dt>LOCATION</dt>         <dd>La Jolla, CA</dd></div>
+            <div class="datasheet__row datasheet__row--hl">
+              <dt>AVAILABLE</dt>
+              <dd><span class="dot dot--live"></span>Summer 2027 internship</dd>
+            </div>
+          </dl>
+        </div>
+
+      </div>
+
+      <div class="dossier__cta">
+        <a href="#work" class="link link--arrow">read the work</a>
+        <a href="#contact" class="link link--arrow">get in touch</a>
+        <span class="dossier__hint">press <kbd>`</kbd> for the terminal</span>
+      </div>
+
+      <p class="dossier__transition">
+        <span class="arrow-down" aria-hidden="true">↓</span>decoding my process<span class="arrow-down" aria-hidden="true">↓</span>
+      </p>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         02 · WORK — projects as stat cards / box scores
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="work" id="work">
+      <div class="section-bar">
+        <span class="section-bar__num">§ 02</span>
+        <span class="section-bar__label">SELECTED&nbsp;WORK</span>
+        <span class="section-bar__rule"></span>
+        <span class="section-bar__meta">N&nbsp;=&nbsp;3</span>
+      </div>
+
+      <p class="work__lede">
+        Three selected works I'd love to walk through in more depth — each
+        one a different shape of data work: research, sports analytics, and
+        applied geospatial.
+      </p>
+
+      <!-- ── PROJECT 01 · Variance97 (headliner) ── -->
+      <article class="card card--feature">
+        <header class="card__head">
+          <div class="card__title-row">
+            <span class="card__id mono">P-01</span>
+            <h3 class="card__title">VARIANCE97</h3>
+            <span class="card__year mono">2026 · spring</span>
+          </div>
+          <p class="card__tagline">
+            McDavid's Stanley Cup Finals point drop is half of Nathan
+            MacKinnon's — and MacKinnon won the Cup. So what actually
+            explains the losses?
+          </p>
+        </header>
+
+        <div class="card__body">
+          <div class="card__stats">
+            <dl class="stats">
+              <div><dt>STATUS</dt>  <dd><span class="pill pill--wip">complete&nbsp;·&nbsp;awaiting&nbsp;deploy</span></dd></div>
+              <div><dt>ROLE</dt>    <dd>solo · author</dd></div>
+              <div><dt>TYPE</dt>    <dd>sports analytics · ml · live dashboard</dd></div>
+              <div><dt>STACK</dt>   <dd>Python · pandas · scikit-learn · SciPy · Streamlit · Plotly · NHL&nbsp;API</dd></div>
+              <div><dt>SOURCES</dt> <dd>NHL&nbsp;API · Hockey Reference · NHL.com · Olympics.com</dd></div>
+            </dl>
+          </div>
+
+          <div class="card__viz" aria-label="Points per game by NHL context, McDavid vs MacKinnon">
+            <div class="viz__head mono">
+              <span>PPG&nbsp;·&nbsp;by NHL context</span>
+              <span class="viz__legend">
+                <i class="legend-dot legend-dot--reg"></i>McDavid
+                <i class="legend-dot legend-dot--post"></i>MacKinnon
+              </span>
+            </div>
+            <svg class="sparkline sparkline--list" viewBox="0 0 360 590" role="img">
+              <!-- PPG reference lines at 1.0 and 2.0 -->
+              <line x1="186" y1="30" x2="186" y2="570" stroke="currentColor" stroke-width=".75" stroke-dasharray="3 4" opacity=".25"/>
+              <line x1="328" y1="30" x2="328" y2="570" stroke="currentColor" stroke-width=".75" stroke-dasharray="3 4" opacity=".15"/>
+              <text x="186" y="22" font-size="10" fill="currentColor" opacity=".55" text-anchor="middle">1.0</text>
+              <text x="328" y="22" font-size="10" fill="currentColor" opacity=".55" text-anchor="middle">2.0</text>
+              <!-- chart left baseline -->
+              <line x1="44" y1="30" x2="44" y2="570" stroke="currentColor" stroke-width=".75" opacity=".4"/>
+
+              <!-- Regular Season -->
+              <text x="38" y="66" font-size="15" letter-spacing="1.5" fill="currentColor" opacity=".75" dominant-baseline="middle" text-anchor="end">RS</text>
+              <rect class="vbar vbar--reg"  x="44" y="30" width="237" height="30"/>
+              <text x="287" y="45" font-size="12" fill="currentColor" opacity=".8" dominant-baseline="middle">1.67</text>
+              <rect class="vbar vbar--post" x="44" y="72" width="219" height="30"/>
+              <text x="269" y="87" font-size="12" fill="currentColor" opacity=".8" dominant-baseline="middle">1.54</text>
+
+              <!-- First Round -->
+              <text x="38" y="183" font-size="15" letter-spacing="1.5" fill="currentColor" opacity=".75" dominant-baseline="middle" text-anchor="end">R1</text>
+              <rect class="vbar vbar--reg"  x="44" y="147" width="251" height="30"/>
+              <text x="301" y="162" font-size="12" fill="currentColor" opacity=".8" dominant-baseline="middle">1.77</text>
+              <rect class="vbar vbar--post" x="44" y="189" width="195" height="30"/>
+              <text x="245" y="204" font-size="12" fill="currentColor" opacity=".8" dominant-baseline="middle">1.37</text>
+
+              <!-- Second Round -->
+              <text x="38" y="300" font-size="15" letter-spacing="1.5" fill="currentColor" opacity=".75" dominant-baseline="middle" text-anchor="end">R2</text>
+              <rect class="vbar vbar--reg"  x="44" y="264" width="229" height="30"/>
+              <text x="279" y="279" font-size="12" fill="currentColor" opacity=".8" dominant-baseline="middle">1.61</text>
+              <rect class="vbar vbar--post" x="44" y="306" width="183" height="30"/>
+              <text x="233" y="321" font-size="12" fill="currentColor" opacity=".8" dominant-baseline="middle">1.29</text>
+
+              <!-- Conference Finals -->
+              <text x="38" y="417" font-size="15" letter-spacing="1.5" fill="currentColor" opacity=".75" dominant-baseline="middle" text-anchor="end">CF</text>
+              <rect class="vbar vbar--reg"  x="44" y="381" width="246" height="30"/>
+              <text x="296" y="396" font-size="12" fill="currentColor" opacity=".8" dominant-baseline="middle">1.73</text>
+              <rect class="vbar vbar--post" x="44" y="423" width="178" height="30"/>
+              <text x="228" y="438" font-size="12" fill="currentColor" opacity=".8" dominant-baseline="middle">1.25</text>
+
+              <!-- Stanley Cup Finals -->
+              <text x="38" y="534" font-size="15" letter-spacing="1.5" fill="currentColor" opacity=".75" dominant-baseline="middle" text-anchor="end">SCF</text>
+              <rect class="vbar vbar--reg"  x="44" y="498" width="196" height="30"/>
+              <text x="246" y="513" font-size="12" fill="currentColor" opacity=".8" dominant-baseline="middle">1.38</text>
+              <rect class="vbar vbar--post" x="44" y="540" width="142" height="30"/>
+              <text x="192" y="555" font-size="12" fill="currentColor" opacity=".8" dominant-baseline="middle">1.00</text>
+            </svg>
+          </div>
+
+          <div class="card__notes">
+            <h4 class="mono small">RESEARCH&nbsp;QUESTIONS</h4>
+            <ol class="qlist">
+              <li>Is McDavid's Stanley Cup Finals decline unusual for an elite forward, or normal-magnitude when benchmarked against a directly comparable peer (Nathan MacKinnon)?</li>
+              <li>Once gameplay features — opponent strength, late-series fatigue, recent form — get to compete with context labels, where does the variance in McDavid's game-level points actually live?</li>
+              <li>What can, and what cannot, be tested about matchup-specific suppression, given that Edmonton's only two Stanley Cup Finals appearances were both against the Panthers?</li>
+            </ol>
+          </div>
+        </div>
+
+        <footer class="card__foot">
+          <a class="link link--arrow" href="https://github.com/KylanHuynh7/Variance97" target="_blank" rel="noopener noreferrer" data-cursor>github</a>
+          <a class="link link--arrow" href="#" data-cursor>writeup&nbsp;(soon)</a>
+        </footer>
+      </article>
+
+      <!-- ── PROJECT 02 · FloodIQ ── -->
+      <article class="card">
+        <header class="card__head">
+          <div class="card__title-row">
+            <span class="card__id mono">P-02</span>
+            <h3 class="card__title">FLOODIQ</h3>
+            <span class="card__year mono">2026 · spring</span>
+          </div>
+          <p class="card__tagline">
+            A flood-risk scoring tool for any U.S. residential address,
+            combining FEMA flood maps and NOAA sea-level projections across
+            10-, 30-, and 100-year horizons.
+          </p>
+        </header>
+
+        <div class="card__body card__body--two">
+          <div class="card__stats">
+            <dl class="stats">
+              <div><dt>STATUS</dt>  <dd><span class="pill pill--done">live&nbsp;·&nbsp;demo&nbsp;deployed</span></dd></div>
+              <div><dt>AWARDS</dt>  <dd>DataHacks&nbsp;2026 — Winner, Product&nbsp;&amp;&nbsp;Entrepreneurship Track · Most Innovative Idea</dd></div>
+              <div><dt>ROLE</dt>    <dd>solo · full-stack</dd></div>
+              <div><dt>TYPE</dt>    <dd>geospatial · risk scoring · full-stack</dd></div>
+              <div><dt>STACK</dt>   <dd>Python · FastAPI · rasterio · SQLite · Next.js&nbsp;16 · React&nbsp;19 · TypeScript · Tailwind&nbsp;v4</dd></div>
+              <div><dt>SOURCES</dt> <dd>FEMA&nbsp;NFHL · NOAA&nbsp;SLR&nbsp;v2022 · U.S.&nbsp;Census&nbsp;Geocoder · OSM&nbsp;Nominatim</dd></div>
+            </dl>
+          </div>
+          <div class="card__notes">
+            <p>
+              Scores a property as a percentile against its county median
+              across three horizons (2036, 2056, 2125), with confidence
+              decoupled from score — so users can tell "78, high confidence"
+              from "78, low confidence." Methodology-first design: a
+              versioned <strong>METHODOLOGY.md</strong> is the source of
+              truth, and the code follows it with section-numbered
+              references throughout.
+            </p>
+            <p>
+              First lookup in a new county seeds ~25 tract-centroid scores
+              from FEMA's NFHL to build a real comparison distribution; every
+              lookup after that is instant. The confirmation map renders
+              static Web Mercator tiles via a hand-rolled tile-layout helper
+              instead of pulling in a map SDK.
+            </p>
+            <p class="mono small muted">
+              FEMA/NOAA&nbsp;disagreement · per-horizon&nbsp;confidence · 3-page&nbsp;PDF&nbsp;report · 75&nbsp;tests
+            </p>
+          </div>
+        </div>
+
+        <footer class="card__foot">
+          <a class="link link--arrow" href="https://flood-iq.vercel.app" target="_blank" rel="noopener noreferrer" data-cursor>live&nbsp;demo</a>
+          <a class="link link--arrow" href="https://github.com/KylanHuynh7/FloodIQ" target="_blank" rel="noopener noreferrer" data-cursor>github</a>
+          <a class="link link--arrow" href="https://github.com/KylanHuynh7/FloodIQ/blob/main/METHODOLOGY.md" target="_blank" rel="noopener noreferrer" data-cursor>methodology</a>
+        </footer>
+      </article>
+
+      <!-- ── PROJECT 03 · MonsterAdjustment ── -->
+      <article class="card">
+        <header class="card__head">
+          <div class="card__title-row">
+            <span class="card__id mono">P-03</span>
+            <h3 class="card__title">MONSTERADJUSTMENT</h3>
+            <span class="card__year mono">2026 · summer</span>
+          </div>
+          <p class="card__tagline">
+            Roki Sasaki's rookie arc — splitter shape, velocity dip, and what
+            translates from NPB to MLB.
+          </p>
+        </header>
+
+        <div class="card__body card__body--two">
+          <div class="card__stats">
+            <dl class="stats">
+              <div><dt>STATUS</dt>  <dd><span class="pill pill--wip">planned&nbsp;·&nbsp;starting&nbsp;soon</span></dd></div>
+              <div><dt>ROLE</dt>    <dd>solo · author</dd></div>
+              <div><dt>TYPE</dt>    <dd>sports analytics · narrative</dd></div>
+              <div><dt>STACK</dt>   <dd>Python · Pandas · Statcast · Matplotlib · (TBD)</dd></div>
+              <div><dt>SOURCES</dt> <dd>Baseball&nbsp;Savant · FanGraphs · NPB records</dd></div>
+            </dl>
+          </div>
+          <div class="card__notes">
+            <p>
+              The follow-up to Variance97. Same instinct — pick one player,
+              follow the data honestly — applied to a story that's still
+              writing itself: the splitter that earned him the nickname
+              "Monster of the Reiwa Era", the velocity questions in his
+              first MLB season, and
+              what NPB workload translates to over 162 games.
+            </p>
+            <p class="mono small muted">
+              pitch&nbsp;mix · splitter&nbsp;movement · workload · transition&nbsp;arc
+            </p>
+          </div>
+        </div>
+
+        <footer class="card__foot">
+          <a class="link link--arrow" href="https://github.com/KylanHuynh7/MonsterAdjustment" target="_blank" rel="noopener noreferrer" data-cursor>github</a>
+          <a class="link link--arrow" href="#" data-cursor>writeup&nbsp;(soon)</a>
+        </footer>
+      </article>
+
+      <!-- ── PROJECT 04 · SayStroop ── -->
+      <article class="card">
+        <header class="card__head">
+          <div class="card__title-row">
+            <span class="card__id mono">P-04</span>
+            <h3 class="card__title">SAYSTROOP</h3>
+            <span class="card__year mono">2025 · fall</span>
+          </div>
+          <p class="card__tagline">
+            A web-based Stroop-effect experiment with live speech recognition,
+            built for participant studies.
+          </p>
+        </header>
+
+        <div class="card__body card__body--two">
+          <div class="card__stats">
+            <dl class="stats">
+              <div><dt>STATUS</dt>  <dd><span class="pill pill--done">shipped</span></dd></div>
+              <div><dt>ROLE</dt>    <dd>full-stack</dd></div>
+              <div><dt>TYPE</dt>    <dd>cognitive science · research tool</dd></div>
+              <div><dt>STACK</dt>   <dd>Python · Streamlit · OpenAI Whisper · WebRTC · Supabase</dd></div>
+            </dl>
+          </div>
+          <div class="card__notes">
+            <p>
+              Participants read words rendered in incongruent ink colors —
+              first the word, then the color of the ink. Whisper transcribes
+              spoken responses in real time so reaction latency and accuracy
+              can be measured without manual scoring. Data persists to Supabase
+              for downstream analysis.
+            </p>
+            <p class="mono small muted">
+              cognitive&nbsp;control · automaticity · reaction&nbsp;time · audio&nbsp;ML
+            </p>
+          </div>
+        </div>
+
+        <footer class="card__foot">
+          <a class="link link--arrow" href="https://github.com/SeojunJaden/SayStroop" target="_blank" rel="noopener noreferrer" data-cursor>github</a>
+          <a class="link link--arrow" href="#" data-cursor>research&nbsp;paper</a>
+          <a class="link link--arrow" href="#" data-cursor>demo</a>
+        </footer>
+      </article>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         03 · LOG — quiet timeline
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="log" id="log">
+      <div class="section-bar">
+        <span class="section-bar__num">§ 03</span>
+        <span class="section-bar__label">LOG</span>
+        <span class="section-bar__rule"></span>
+        <span class="section-bar__meta">2024 → present</span>
+      </div>
+
+      <ol class="log__list">
+        <li class="log__row log__row--current">
+          <span class="log__when mono">2026 · spring</span>
+          <div class="log__what">
+            <div class="log__item">
+              <strong>Variance97</strong> begins. Sophomore year wrapping
+              up; open to a <em>summer&nbsp;'27 internship</em> in data,
+              analytics, or research.
+            </div>
+            <div class="log__item">
+              Joined <strong>UC San Diego Athletics</strong> as a
+              Basketball Data Analyst under Prof. Bradley Voytek —
+              building scouting tools for the men's and women's programs.
+              Ongoing.
+            </div>
+          </div>
+        </li>
+        <li class="log__row">
+          <span class="log__when mono">2026 · winter</span>
+          <div class="log__what">
+            <div class="log__item">
+              Started as a <strong>data consultant</strong> on a
+              species-imputation project — building a geospatial pipeline
+              on Google Earth Engine to impute missing observations from
+              satellite data. Continuing into summer&nbsp;'26.
+            </div>
+          </div>
+        </li>
+        <li class="log__row">
+          <span class="log__when mono">2025 · fall</span>
+          <div class="log__what">
+            <div class="log__item">
+              Shipped <strong>SayStroop</strong> with a small team. Real
+              participants, real data, a real paper.
+            </div>
+          </div>
+        </li>
+        <li class="log__row">
+          <span class="log__when mono">2024 · sept</span>
+          <div class="log__what">
+            <div class="log__item">
+              Started at <strong>UC San Diego</strong>, Data Science B.S.
+            </div>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         04 · STACK — quiet inventory
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="stack" id="stack">
+      <div class="section-bar">
+        <span class="section-bar__num">§ 04</span>
+        <span class="section-bar__label">STACK</span>
+        <span class="section-bar__rule"></span>
+        <span class="section-bar__meta">tools&nbsp;·&nbsp;languages</span>
+      </div>
+
+      <div class="stack__grid">
+        <div class="stack__group">
+          <h4 class="mono small group-label">LANGUAGES</h4>
+          <ul class="tags">
+            <li>Python</li><li>JavaScript</li>
+          </ul>
+        </div>
+        <div class="stack__group">
+          <h4 class="mono small group-label">DATA</h4>
+          <ul class="tags">
+            <li>Pandas</li><li>NumPy</li><li>scikit-learn</li><li>PyTorch <span class="muted">(learning)</span></li><li>Jupyter</li><li>Matplotlib</li><li>Seaborn</li>
+          </ul>
+        </div>
+        <div class="stack__group">
+          <h4 class="mono small group-label">PLATFORMS</h4>
+          <ul class="tags">
+            <li>Google Earth Engine</li><li>Supabase</li><li>Postgres</li><li>Streamlit</li><li>OpenAI Whisper</li>
+          </ul>
+        </div>
+        <div class="stack__group">
+          <h4 class="mono small group-label">CLI · WORKFLOW</h4>
+          <ul class="tags">
+            <li>git</li><li>zsh</li><li>tmux</li><li>VS Code</li><li>vim</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         05 · NOW — Letterboxd-style consumption diary
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="now" id="now">
+      <div class="section-bar">
+        <span class="section-bar__num">§ 05</span>
+        <span class="section-bar__label">NOW</span>
+        <span class="section-bar__rule"></span>
+        <span class="section-bar__meta">UPDATED&nbsp;<span id="now-updated">—</span></span>
+      </div>
+
+      <p class="now__lede">
+        Less of a log, more of a desk — a few things in rotation right now,
+        arranged the way I'd actually arrange them. If you've scrolled this far,
+        you're getting the off-the-clock version.
+      </p>
+
+      <div class="now__spread">
+
+        <article class="note" style="--span:7" id="now-letterboxd" data-letterboxd-user="kyyllannn">
+          <span class="note__tag">ON THE COUCH</span>
+          <h3 class="note__title">Recent Watches</h3>
+          <p class="note__meta">letterboxd · kyyllannn</p>
+          <ol class="note__diary" data-lb-list>
+            <li class="note__diary-row note__diary-row--placeholder">
+              <span class="note__diary-title">loading diary…</span>
+            </li>
+          </ol>
+          <p class="note__voice">
+            latest from the letterboxd diary — pulled fresh each visit.
+          </p>
+        </article>
+
+        <article class="note" style="--span:5">
+          <span class="note__tag">IN MY EARS</span>
+          <h3 class="note__title">Ca$ino</h3>
+          <p class="note__meta">Baby Keem · 2026</p>
+          <p class="note__rating" aria-label="on repeat">
+            <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <span class="mono small">on repeat</span>
+          </p>
+          <p class="note__voice">
+            the current rotation.
+          </p>
+        </article>
+
+        <article class="note" style="--span:5">
+          <span class="note__tag">ON MY DESK</span>
+          <h3 class="note__title"><em>Men in Dark Times</em></h3>
+          <p class="note__meta">Hannah Arendt · 1968</p>
+          <p class="note__rating mono small">in&nbsp;progress</p>
+          <p class="note__voice">
+            portraits of people who kept their light on when the world dimmed.
+            essays that ask the right questions.
+          </p>
+        </article>
+
+        <article class="note note--sports" style="--span:7">
+          <span class="note__tag">THE STADIUM · LA-CODED</span>
+          <div class="stadium">
+            <div class="team" data-sport="NBA">
+              <span class="team__league">NBA</span>
+              <span class="team__name">Lakers</span>
+              <span class="team__action" data-sport-action>—</span>
+            </div>
+            <div class="team" data-sport="MLB">
+              <span class="team__league">MLB</span>
+              <span class="team__name">Dodgers</span>
+              <span class="team__action" data-sport-action>—</span>
+            </div>
+            <div class="team" data-sport="NFL">
+              <span class="team__league">NFL</span>
+              <span class="team__name">Rams</span>
+              <span class="team__action" data-sport-action>—</span>
+            </div>
+            <div class="team" data-sport="NHL">
+              <span class="team__league">NHL</span>
+              <span class="team__name">Kings</span>
+              <span class="team__action" data-sport-action>—</span>
+            </div>
+          </div>
+          <p class="note__voice">
+            all four sports, all in LA. the calendar keeps me company year-round —
+            this row updates itself as seasons start and end.
+          </p>
+        </article>
+
+        <article class="note note--build" style="--span:12">
+          <span class="note__tag">AT THE WORKBENCH</span>
+          <h3 class="note__title">Ghostfork</h3>
+          <p class="note__meta">data project · roki sasaki · npb → mlb · in progress</p>
+          <p class="note__voice">
+            tracing the rookie arc — splitter shape, velocity dip, workload translation.
+            narrative-led, data-honest. variance97 lives; this is the next one.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         06 · CONTACT
+         ═══════════════════════════════════════════════════════════ -->
+    <section class="contact" id="contact">
+      <div class="section-bar">
+        <span class="section-bar__num">§ 06</span>
+        <span class="section-bar__label">CONTACT</span>
+        <span class="section-bar__rule"></span>
+        <span class="section-bar__meta">always&nbsp;open</span>
+      </div>
+
+      <div class="contact__inner">
+        <p class="contact__line">
+          Currently seeking a <span class="hl">Summer&nbsp;2027&nbsp;data&nbsp;internship.</span>
+          Always happy to talk about sports, books, films, or anything you
+          think I'd find interesting.
+        </p>
+
+        <a href="mailto:huynh.kylan7@gmail.com" class="contact__email" data-cursor>
+          <span class="contact__email-label mono">→ EMAIL</span>
+          <span class="contact__email-addr">huynh.kylan7@gmail.com</span>
+        </a>
+
+        <ul class="contact__links">
+          <li><span class="mono small">GH</span><a href="https://github.com/KylanHuynh7" target="_blank" rel="noopener noreferrer" data-cursor>github.com/KylanHuynh7</a></li>
+          <li><span class="mono small">LI</span><a href="https://www.linkedin.com/in/kylan-huynh7/" target="_blank" rel="noopener noreferrer" data-cursor>linkedin.com/in/kylan-huynh7</a></li>
+          <li><span class="mono small">CV</span><a href="https://drive.google.com/file/d/1eNmOADNJwb8WYFJuJCYg7Ji6FfUJ5Zpd/view?usp=sharing" target="_blank" rel="noopener noreferrer" data-cursor>resume&nbsp;(PDF)</a></li>
+          <li><span class="mono small">LB</span><a href="https://letterboxd.com/kyyllannn/" target="_blank" rel="noopener noreferrer" data-cursor>letterboxd.com/kyyllannn</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       Footer
+       ═══════════════════════════════════════════════════════════ -->
+  <footer class="foot">
+    <div class="foot__rule"></div>
+    <div class="foot__cols">
+      <p class="foot__col">
+        <span class="foot__label mono">FILE</span>
+        DOSSIER&nbsp;·&nbsp;001&nbsp;·&nbsp;KH
+      </p>
+      <p class="foot__col">
+        <span class="foot__label mono">BUILT&nbsp;WITH</span>
+        html&nbsp;·&nbsp;css&nbsp;·&nbsp;js&nbsp;·&nbsp;0&nbsp;frameworks
+      </p>
+      <p class="foot__col">
+        <span class="foot__label mono">TYPE</span>
+        IBM&nbsp;Plex&nbsp;Mono&nbsp;·&nbsp;Plex&nbsp;Sans
+      </p>
+      <p class="foot__col">
+        <span class="foot__label mono">REV</span>
+        <span id="last-edit">—</span>
+      </p>
+    </div>
+    <div class="foot__sig">
+      <p class="foot__epitaph">the future is yours.</p>
+      <p class="foot__copyright mono small">© <span id="year">2026</span> · Kylan&nbsp;Huynh · all rights reserved</p>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       Terminal — summoned by `, easter eggs included
+       ═══════════════════════════════════════════════════════════ -->
+  <div class="terminal" id="terminal" hidden>
+    <div class="terminal__frame">
+      <div class="terminal__bar">
+        <span class="mono small">kylan@dossier ~ %</span>
+        <button class="terminal__close" id="terminal-close" aria-label="Close">[esc]</button>
+      </div>
+      <div class="terminal__body" id="terminal-body">
+        <div class="terminal__line">
+          <span class="terminal__prompt">$</span>
+          <span>welcome to dossier v1.0 · type <em>help</em> for commands.</span>
+        </div>
+      </div>
+      <form class="terminal__input" id="terminal-form">
+        <span class="terminal__prompt">$</span>
+        <input id="terminal-cmd" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="help"/>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
