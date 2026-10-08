@@ -1,7 +1,7 @@
 // Pulls the Letterboxd diary RSS and writes letterboxd.json for the "Recent Watches" card.
 // Runs server-side (GitHub Actions, or `node scripts/letterboxd.mjs` locally), so the page
 // no longer depends on a CORS proxy.
-import { writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 
 const USER = 'kyyllannn';
 const MAX = 8;
@@ -35,5 +35,15 @@ const entries = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)]
   .slice(0, MAX);
 
 if (!entries.length) throw new Error('no diary entries in feed');
-writeFileSync(new URL('../letterboxd.json', import.meta.url), JSON.stringify({ user: USER, fetched: new Date().toISOString(), entries }, null, 2) + '\n');
-console.log(`wrote ${entries.length} entries`);
+
+// Leave the file alone when the diary hasn't changed, so the daily run
+// doesn't commit (and redeploy the site) just for a new timestamp.
+const out = new URL('../letterboxd.json', import.meta.url);
+let previous = null;
+try { previous = JSON.parse(readFileSync(out, 'utf8')).entries; } catch { /* first run */ }
+if (JSON.stringify(previous) === JSON.stringify(entries)) {
+  console.log('diary unchanged');
+} else {
+  writeFileSync(out, JSON.stringify({ user: USER, fetched: new Date().toISOString(), entries }, null, 2) + '\n');
+  console.log(`wrote ${entries.length} entries`);
+}
