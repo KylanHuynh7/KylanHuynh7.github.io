@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="color-scheme" content="light" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#06080b" />
   <title>Kylan Huynh — Dossier 001</title>
   <meta name="description" content="Kylan Huynh — Data Science, UC San Diego. Sports analytics, research, and quietly built software." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" />
 
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fafaf9'/%3E%3Ctext x='4' y='22' font-family='IBM Plex Mono, monospace' font-size='18' font-weight='700' fill='%230a0a0a'%3EKH%3C/text%3E%3Crect x='25' y='8' width='4' height='4' fill='%237a1a1a'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2306080b'/%3E%3Ccircle cx='16' cy='16' r='12' fill='none' stroke='%238fb8d4' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%238fb8d4' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23b0202e'/%3E%3C/svg%3E" />
 </head>
 <body>
+  <div class="radar" aria-hidden="true"></div>
 
   <!-- ═══════════════════════════════════════════════════════════════
        Scoreboard topbar — feels like a stadium status line
@@ -60,7 +62,7 @@
         <div class="dossier__name">
           <h1>
             <span class="dossier__first">Kylan</span>
-            <span class="dossier__last">Huynh.</span>
+            <span class="dossier__last">Huynh<span class="dossier__stop">.</span></span>
           </h1>
           <p class="dossier__subtitle">
             Data scientist in training. Scaling personal interests into
@@ -75,8 +77,8 @@
             <div class="datasheet__row"><dt>YEAR</dt>             <dd>Class of 2028</dd></div>
             <div class="datasheet__row"><dt>MAJOR</dt>            <dd>Data Science, B.S.</dd></div>
             <div class="datasheet__row"><dt>INSTITUTION</dt>      <dd>UC San Diego</dd></div>
-            <div class="datasheet__row"><dt>FOCUS</dt>            <dd>Sports analytics · Statistics · ML</dd></div>
-            <div class="datasheet__row"><dt>STATUS</dt>           <dd>Sophomore <span class="arrow">→</span> Junior</dd></div>
+            <div class="datasheet__row"><dt>FOCUS</dt>            <dd>Sports analytics · Statistics · ML research</dd></div>
+            <div class="datasheet__row"><dt>STATUS</dt>           <dd>Junior · 3rd year</dd></div>
             <div class="datasheet__row"><dt>LOCATION</dt>         <dd>La Jolla, CA</dd></div>
             <div class="datasheet__row datasheet__row--hl">
               <dt>AVAILABLE</dt>
@@ -107,13 +109,13 @@
         <span class="section-bar__num">§ 02</span>
         <span class="section-bar__label">SELECTED&nbsp;WORK</span>
         <span class="section-bar__rule"></span>
-        <span class="section-bar__meta">N&nbsp;=&nbsp;3</span>
+        <span class="section-bar__meta">N&nbsp;=&nbsp;7</span>
       </div>
 
       <p class="work__lede">
-        Three selected works I'd love to walk through in more depth — each
-        one a different shape of data work: research, sports analytics, and
-        applied geospatial.
+        Selected work I'd love to walk through in more depth — sports
+        analytics, forecasting, applied geospatial, cognitive-science
+        research, and the small tools that keep data honest.
       </p>
 
       <!-- ── PROJECT 01 · Variance97 (headliner) ── -->
@@ -122,7 +124,7 @@
           <div class="card__title-row">
             <span class="card__id mono">P-01</span>
             <h3 class="card__title">VARIANCE97</h3>
-            <span class="card__year mono">2026 · spring</span>
+            <span class="card__year mono">2026 · jan → may</span>
           </div>
           <p class="card__tagline">
             McDavid's Stanley Cup Finals point drop is half of Nathan
@@ -134,9 +136,10 @@
         <div class="card__body">
           <div class="card__stats">
             <dl class="stats">
-              <div><dt>STATUS</dt>  <dd><span class="pill pill--wip">complete&nbsp;·&nbsp;awaiting&nbsp;deploy</span></dd></div>
+              <div><dt>STATUS</dt>  <dd><span class="pill pill--done">complete · dashboard&nbsp;live</span></dd></div>
               <div><dt>ROLE</dt>    <dd>solo · author</dd></div>
-              <div><dt>TYPE</dt>    <dd>sports analytics · ml · live dashboard</dd></div>
+              <div><dt>TYPE</dt>    <dd>sports analytics · hypothesis testing · ml · live dashboard</dd></div>
+              <div><dt>SAMPLE</dt>  <dd>478 NHL games · 2025 4&nbsp;Nations · 2026 Olympics</dd></div>
               <div><dt>STACK</dt>   <dd>Python · pandas · scikit-learn · SciPy · Streamlit · Plotly · NHL&nbsp;API</dd></div>
               <div><dt>SOURCES</dt> <dd>NHL&nbsp;API · Hockey Reference · NHL.com · Olympics.com</dd></div>
             </dl>
@@ -203,12 +206,19 @@
               <li>Once gameplay features — opponent strength, late-series fatigue, recent form — get to compete with context labels, where does the variance in McDavid's game-level points actually live?</li>
               <li>What can, and what cannot, be tested about matchup-specific suppression, given that Edmonton's only two Stanley Cup Finals appearances were both against the Panthers?</li>
             </ol>
+            <h4 class="mono small finding-label">FINDING</h4>
+            <p>
+              The MacKinnon peer test overturned the original thesis. Once the
+              circular features were replaced with gameplay ones, the "Stanley
+              Cup Finals" coefficient fell from <strong>+0.67 to −0.07</strong>;
+              the variance belongs to late-series fatigue and opposing defense.
+            </p>
           </div>
         </div>
 
         <footer class="card__foot">
+          <a class="link link--arrow" href="https://variance97-s26u7gyazbqesy5jvmhggw.streamlit.app/" target="_blank" rel="noopener noreferrer" data-cursor>live&nbsp;dashboard</a>
           <a class="link link--arrow" href="https://github.com/KylanHuynh7/Variance97" target="_blank" rel="noopener noreferrer" data-cursor>github</a>
-          <a class="link link--arrow" href="#" data-cursor>writeup&nbsp;(soon)</a>
         </footer>
       </article>
 
@@ -230,7 +240,7 @@
         <div class="card__body card__body--two">
           <div class="card__stats">
             <dl class="stats">
-              <div><dt>STATUS</dt>  <dd><span class="pill pill--done">live&nbsp;·&nbsp;demo&nbsp;deployed</span></dd></div>
+              <div><dt>STATUS</dt>  <dd><span class="pill pill--done">live · demo&nbsp;deployed</span></dd></div>
               <div><dt>AWARDS</dt>  <dd>DataHacks&nbsp;2026 — Winner, Product&nbsp;&amp;&nbsp;Entrepreneurship Track · Most Innovative Idea</dd></div>
               <div><dt>ROLE</dt>    <dd>solo · full-stack</dd></div>
               <div><dt>TYPE</dt>    <dd>geospatial · risk scoring · full-stack</dd></div>
@@ -274,50 +284,160 @@
           <div class="card__title-row">
             <span class="card__id mono">P-03</span>
             <h3 class="card__title">MONSTERADJUSTMENT</h3>
-            <span class="card__year mono">2026 · summer</span>
+            <span class="card__year mono">2026 · may → oct</span>
           </div>
           <p class="card__tagline">
-            Roki Sasaki's rookie arc — splitter shape, velocity dip, and what
-            translates from NPB to MLB.
+            Roki Sasaki posted a 0.84 ERA as a 2025 postseason closer, then
+            struggled as an MLB starter. Why — tested against Yoshinobu
+            Yamamoto as a matched control.
           </p>
         </header>
 
         <div class="card__body card__body--two">
           <div class="card__stats">
             <dl class="stats">
-              <div><dt>STATUS</dt>  <dd><span class="pill pill--wip">planned&nbsp;·&nbsp;starting&nbsp;soon</span></dd></div>
+              <div><dt>STATUS</dt>  <dd><span class="pill pill--done">complete · site&nbsp;live</span></dd></div>
               <div><dt>ROLE</dt>    <dd>solo · author</dd></div>
-              <div><dt>TYPE</dt>    <dd>sports analytics · narrative</dd></div>
-              <div><dt>STACK</dt>   <dd>Python · Pandas · Statcast · Matplotlib · (TBD)</dd></div>
-              <div><dt>SOURCES</dt> <dd>Baseball&nbsp;Savant · FanGraphs · NPB records</dd></div>
+              <div><dt>TYPE</dt>    <dd>sports analytics · pre-registered study</dd></div>
+              <div><dt>STACK</dt>   <dd>Python · pandas · Statcast · cluster bootstrap · Next.js · Vercel</dd></div>
+              <div><dt>SOURCES</dt> <dd>Baseball&nbsp;Savant · MLB&nbsp;Stats&nbsp;API · Baseball&nbsp;Reference</dd></div>
             </dl>
           </div>
           <div class="card__notes">
             <p>
-              The follow-up to Variance97. Same instinct — pick one player,
-              follow the data honestly — applied to a story that's still
-              writing itself: the splitter that earned him the nickname
-              "Monster of the Reiwa Era", the velocity questions in his
-              first MLB season, and
-              what NPB workload translates to over 162 games.
+              The follow-up to Variance97, run stricter: every section's
+              hypothesis, thresholds, and falsification criteria were committed
+              before the analysis ran. Same team, same pitching coach, same
+              catchers — Yamamoto isolates what is Sasaki's alone. Results are
+              effect sizes with 95% cluster-bootstrap intervals, not p-values.
+            </p>
+            <p>
+              The verdict: <strong>fastball velocity</strong>. Per-start
+              four-seam velocity tracks contact allowed (r&nbsp;=&nbsp;−0.54
+              across 31 starts), while walks did not separate good starts from
+              bad. Against 200 MLB starters, his velocity dependence turned out
+              typical. Two forecasts were locked on Oct&nbsp;1, before the
+              games they predict, and are graded in public.
             </p>
             <p class="mono small muted">
-              pitch&nbsp;mix · splitter&nbsp;movement · workload · transition&nbsp;arc
+              5&nbsp;hypotheses · pre-registered&nbsp;specs · league&nbsp;benchmark · locked&nbsp;predictions
             </p>
           </div>
         </div>
 
         <footer class="card__foot">
+          <a class="link link--arrow" href="https://monster-adjustment.vercel.app" target="_blank" rel="noopener noreferrer" data-cursor>live&nbsp;site</a>
           <a class="link link--arrow" href="https://github.com/KylanHuynh7/MonsterAdjustment" target="_blank" rel="noopener noreferrer" data-cursor>github</a>
-          <a class="link link--arrow" href="#" data-cursor>writeup&nbsp;(soon)</a>
+          <a class="link link--arrow" href="https://github.com/KylanHuynh7/MonsterAdjustment/blob/main/METHODOLOGY.md" target="_blank" rel="noopener noreferrer" data-cursor>methodology</a>
         </footer>
       </article>
 
-      <!-- ── PROJECT 04 · SayStroop ── -->
+      <!-- ── PROJECT 04 · Tilt ── -->
       <article class="card">
         <header class="card__head">
           <div class="card__title-row">
             <span class="card__id mono">P-04</span>
+            <h3 class="card__title">TILT</h3>
+            <span class="card__year mono">2026 · may</span>
+          </div>
+          <p class="card__tagline">
+            An interpretable Elo-variant rating system for every NHL team since
+            1967, built to report its calibration honestly — not to beat Vegas.
+          </p>
+        </header>
+
+        <div class="card__body card__body--two">
+          <div class="card__stats">
+            <dl class="stats">
+              <div><dt>STATUS</dt>  <dd><span class="pill pill--done">v1 locked · v2 eval pending</span></dd></div>
+              <div><dt>ROLE</dt>    <dd>solo · full-stack</dd></div>
+              <div><dt>TYPE</dt>    <dd>sports forecasting · calibration · live app</dd></div>
+              <div><dt>STACK</dt>   <dd>Python · FastAPI · React · Vite · TypeScript · Docker · Vercel · Render</dd></div>
+              <div><dt>SOURCES</dt> <dd>NHL&nbsp;API (scores, play-by-play)</dd></div>
+            </dl>
+          </div>
+          <div class="card__notes">
+            <p>
+              Methodology written and frozen before any code: walk-forward
+              backtest, the test set touched exactly once per version, every
+              metric reported whether it flatters or not. v1 beat both
+              baselines on log-loss and Brier and <strong>missed its
+              calibration target</strong> — under-predicting home wins by 3–8
+              points, the pre-registered signature of ignoring home ice.
+            </p>
+            <p>
+              v2 adds a +40 Elo home bump (validation ECE 0.042 → 0.015),
+              10,000-run Monte Carlo Cup odds, and live in-game win probability
+              from 1.17M minute-by-minute samples across 19,092 games.
+            </p>
+            <p class="mono small muted">
+              walk-forward&nbsp;backtest · log-loss · Brier · ECE · 154&nbsp;tests
+            </p>
+          </div>
+        </div>
+
+        <footer class="card__foot">
+          <a class="link link--arrow" href="https://tilt-nhl.vercel.app" target="_blank" rel="noopener noreferrer" data-cursor>live&nbsp;app</a>
+          <a class="link link--arrow" href="https://github.com/KylanHuynh7/Tilt" target="_blank" rel="noopener noreferrer" data-cursor>github</a>
+          <a class="link link--arrow" href="https://github.com/KylanHuynh7/Tilt/blob/main/METHODOLOGY.md" target="_blank" rel="noopener noreferrer" data-cursor>methodology</a>
+        </footer>
+      </article>
+
+      <!-- ── PROJECT 05 · FixtureFeed ── -->
+      <article class="card">
+        <header class="card__head">
+          <div class="card__title-row">
+            <span class="card__id mono">P-05</span>
+            <h3 class="card__title">FIXTUREFEED</h3>
+            <span class="card__year mono">2026 · oct</span>
+          </div>
+          <p class="card__tagline">
+            Subscribable NFL team calendars. When a game is moved, flexed, or
+            cancelled, the event already on your calendar updates in place.
+          </p>
+        </header>
+
+        <div class="card__body card__body--two">
+          <div class="card__stats">
+            <dl class="stats">
+              <div><dt>STATUS</dt>  <dd><span class="pill pill--done">live</span></dd></div>
+              <div><dt>ROLE</dt>    <dd>solo · full-stack</dd></div>
+              <div><dt>TYPE</dt>    <dd>data pipeline · web service</dd></div>
+              <div><dt>STACK</dt>   <dd>Python · PostgreSQL · ICS · pytest · hypothesis · GitHub&nbsp;Actions</dd></div>
+              <div><dt>SOURCES</dt> <dd>nflverse schedule data</dd></div>
+            </dl>
+          </div>
+          <div class="card__notes">
+            <p>
+              Pick a team, get a private ICS link for Google or Apple Calendar,
+              filtered to home, away, or primetime games. Each game keeps one
+              permanent ID, and its version only rises when something a
+              calendar shows has changed — so updates replace events instead
+              of duplicating them.
+            </p>
+            <p>
+              Every schedule pull is diffed and applied in one transaction;
+              suspicious snapshots (shrunken, missing teams, ambiguous matches)
+              are rejected without touching a game. Each team gets a
+              plain-English change history and an Atom feed to watch.
+            </p>
+            <p class="mono small muted">
+              in-place&nbsp;updates · change&nbsp;log · Atom&nbsp;feed · property-based&nbsp;tests
+            </p>
+          </div>
+        </div>
+
+        <footer class="card__foot">
+          <a class="link link--arrow" href="https://fixturefeed.vercel.app" target="_blank" rel="noopener noreferrer" data-cursor>live&nbsp;site</a>
+          <a class="link link--arrow" href="https://github.com/KylanHuynh7/FixtureFeed" target="_blank" rel="noopener noreferrer" data-cursor>github</a>
+        </footer>
+      </article>
+
+      <!-- ── PROJECT 06 · SayStroop ── -->
+      <article class="card">
+        <header class="card__head">
+          <div class="card__title-row">
+            <span class="card__id mono">P-06</span>
             <h3 class="card__title">SAYSTROOP</h3>
             <span class="card__year mono">2025 · fall</span>
           </div>
@@ -331,7 +451,8 @@
           <div class="card__stats">
             <dl class="stats">
               <div><dt>STATUS</dt>  <dd><span class="pill pill--done">shipped</span></dd></div>
-              <div><dt>ROLE</dt>    <dd>full-stack</dd></div>
+              <div><dt>AWARDS</dt>  <dd>2nd place · Data Science Student Society quarterly competition</dd></div>
+              <div><dt>ROLE</dt>    <dd>full-stack · team</dd></div>
               <div><dt>TYPE</dt>    <dd>cognitive science · research tool</dd></div>
               <div><dt>STACK</dt>   <dd>Python · Streamlit · OpenAI Whisper · WebRTC · Supabase</dd></div>
             </dl>
@@ -339,10 +460,12 @@
           <div class="card__notes">
             <p>
               Participants read words rendered in incongruent ink colors —
-              first the word, then the color of the ink. Whisper transcribes
-              spoken responses in real time so reaction latency and accuracy
-              can be measured without manual scoring. Data persists to Supabase
-              for downstream analysis.
+              first the word, then the color of the ink — and answer out loud.
+              Whisper's timestamps drifted, so we built a custom
+              voice-activity detection pipeline (inspired by Silero VAD) to
+              time responses, improving reaction-time accuracy across 1,500+
+              samples. Identity checks in Supabase keep duplicate submissions
+              out of the data.
             </p>
             <p class="mono small muted">
               cognitive&nbsp;control · automaticity · reaction&nbsp;time · audio&nbsp;ML
@@ -352,8 +475,42 @@
 
         <footer class="card__foot">
           <a class="link link--arrow" href="https://github.com/SeojunJaden/SayStroop" target="_blank" rel="noopener noreferrer" data-cursor>github</a>
-          <a class="link link--arrow" href="#" data-cursor>research&nbsp;paper</a>
-          <a class="link link--arrow" href="#" data-cursor>demo</a>
+        </footer>
+      </article>
+
+      <!-- ── PROJECT 07 · RosterWatch (mentor) ── -->
+      <article class="card card--mentor">
+        <header class="card__head">
+          <div class="card__title-row">
+            <span class="card__id mono">P-07</span>
+            <h3 class="card__title">ROSTERWATCH</h3>
+            <span class="card__year mono">2026 · fall</span>
+          </div>
+          <p class="card__tagline">
+            A DS3 fantasy-football project for fall 2026 — where I'm the mentor,
+            not a contributor.
+          </p>
+        </header>
+
+        <div class="card__body card__body--two">
+          <div class="card__stats">
+            <dl class="stats">
+              <div><dt>STATUS</dt>  <dd><span class="pill pill--wip">in progress</span></dd></div>
+              <div><dt>ROLE</dt>    <dd>mentor · DS3 at UC San Diego</dd></div>
+              <div><dt>TYPE</dt>    <dd>sports analytics · student project</dd></div>
+            </dl>
+          </div>
+          <div class="card__notes">
+            <p>
+              I mentor the Data Science Student Society team building
+              RosterWatch this quarter. The code and the analysis are the
+              team's own; my part is guiding them through it.
+            </p>
+          </div>
+        </div>
+
+        <footer class="card__foot">
+          <a class="link link--arrow" href="https://github.com/KylanHuynh7/RosterWatch" target="_blank" rel="noopener noreferrer" data-cursor>github</a>
         </footer>
       </article>
 
@@ -373,18 +530,44 @@
 
       <ol class="log__list">
         <li class="log__row log__row--current">
+          <span class="log__when mono">2026 · fall</span>
+          <div class="log__what">
+            <div class="log__item">
+              Junior year. Wrapped <strong>MonsterAdjustment</strong> and
+              locked its two predictions on Oct&nbsp;1 — the postseason one is
+              being graded right now. Open to a <em>summer&nbsp;'27
+              internship</em> in data, analytics, or research.
+            </div>
+            <div class="log__item">
+              Mentoring the DS3 team behind <strong>RosterWatch</strong>, a
+              fantasy-football project. Shipped <strong>FixtureFeed</strong>,
+              self-updating NFL calendars.
+            </div>
+          </div>
+        </li>
+        <li class="log__row">
+          <span class="log__when mono">2026 · summer</span>
+          <div class="log__what">
+            <div class="log__item">
+              Built <strong>MonsterAdjustment</strong>: a pre-registered study
+              of Roki Sasaki's move from NPB to MLB, with its own site.
+            </div>
+          </div>
+        </li>
+        <li class="log__row">
           <span class="log__when mono">2026 · spring</span>
           <div class="log__what">
             <div class="log__item">
-              <strong>Variance97</strong> begins. Sophomore year wrapping
-              up; open to a <em>summer&nbsp;'27 internship</em> in data,
-              analytics, or research.
+              Shipped <strong>Variance97</strong> with a self-updating
+              Streamlit dashboard.
             </div>
             <div class="log__item">
-              Joined <strong>UC San Diego Athletics</strong> as a
-              Basketball Data Analyst under Prof. Bradley Voytek —
-              building scouting tools for the men's and women's programs.
-              Ongoing.
+              <strong>FloodIQ</strong> won the Product &amp; Entrepreneurship
+              track and Most Innovative Idea at DataHacks&nbsp;2026.
+            </div>
+            <div class="log__item">
+              Shipped and locked v1 of <strong>Tilt</strong>, a calibrated NHL
+              rating system with a live app.
             </div>
           </div>
         </li>
@@ -392,10 +575,11 @@
           <span class="log__when mono">2026 · winter</span>
           <div class="log__what">
             <div class="log__item">
-              Started as a <strong>data consultant</strong> on a
-              species-imputation project — building a geospatial pipeline
-              on Google Earth Engine to impute missing observations from
-              satellite data. Continuing into summer&nbsp;'26.
+              Joined the <strong>UC San Diego Natural Reserve System</strong>
+              as a Machine Learning Research Assistant under Dr. Kellie Uyeda —
+              an end-to-end pipeline predicting species occurrence from
+              environmental niches, plus a Streamlit app that opens the results
+              to the public. Ongoing.
             </div>
           </div>
         </li>
@@ -403,8 +587,19 @@
           <span class="log__when mono">2025 · fall</span>
           <div class="log__what">
             <div class="log__item">
-              Shipped <strong>SayStroop</strong> with a small team. Real
-              participants, real data, a real paper.
+              Shipped <strong>SayStroop</strong> with a small team — 2nd place
+              in the Data Science Student Society's quarterly competition.
+            </div>
+          </div>
+        </li>
+        <li class="log__row">
+          <span class="log__when mono">2025 · spring</span>
+          <div class="log__what">
+            <div class="log__item">
+              Joined <strong>UC San Diego Athletics</strong> as a Basketball
+              Data Analyst under Prof. Bradley Voytek — transfer-portal
+              scouting, and a PCA-based scouting dashboard for the coaching
+              staff. Ongoing.
             </div>
           </div>
         </li>
@@ -435,25 +630,25 @@
         <div class="stack__group">
           <h4 class="mono small group-label">LANGUAGES</h4>
           <ul class="tags">
-            <li>Python</li><li>JavaScript</li>
+            <li>Python</li><li>Java</li><li>TypeScript / JavaScript</li>
           </ul>
         </div>
         <div class="stack__group">
           <h4 class="mono small group-label">DATA</h4>
           <ul class="tags">
-            <li>Pandas</li><li>NumPy</li><li>scikit-learn</li><li>PyTorch <span class="muted">(learning)</span></li><li>Jupyter</li><li>Matplotlib</li><li>Seaborn</li>
+            <li>pandas</li><li>NumPy</li><li>SciPy</li><li>scikit-learn</li><li>PyTorch <span class="muted">(learning)</span></li><li>Matplotlib</li><li>Plotly</li>
           </ul>
         </div>
         <div class="stack__group">
           <h4 class="mono small group-label">PLATFORMS</h4>
           <ul class="tags">
-            <li>Google Earth Engine</li><li>Supabase</li><li>Postgres</li><li>Streamlit</li><li>OpenAI Whisper</li>
+            <li>Streamlit</li><li>Next.js</li><li>Vercel</li><li>Supabase</li><li>Google Earth Engine</li><li>OpenAI Whisper</li>
           </ul>
         </div>
         <div class="stack__group">
           <h4 class="mono small group-label">CLI · WORKFLOW</h4>
           <ul class="tags">
-            <li>git</li><li>zsh</li><li>tmux</li><li>VS Code</li><li>vim</li>
+            <li>git</li><li>Jupyter</li><li>VS Code</li><li>IntelliJ</li><li>SPSS</li>
           </ul>
         </div>
       </div>
@@ -489,31 +684,18 @@
             </li>
           </ol>
           <p class="note__voice">
-            latest from the letterboxd diary — pulled fresh each visit.
-          </p>
-        </article>
-
-        <article class="note" style="--span:5">
-          <span class="note__tag">IN MY EARS</span>
-          <h3 class="note__title">Ca$ino</h3>
-          <p class="note__meta">Baby Keem · 2026</p>
-          <p class="note__rating" aria-label="on repeat">
-            <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-            <span class="mono small">on repeat</span>
-          </p>
-          <p class="note__voice">
-            the current rotation.
+            latest from the letterboxd diary — refreshed daily.
           </p>
         </article>
 
         <article class="note" style="--span:5">
           <span class="note__tag">ON MY DESK</span>
-          <h3 class="note__title"><em>Men in Dark Times</em></h3>
-          <p class="note__meta">Hannah Arendt · 1968</p>
+          <h3 class="note__title"><em>The Death and Life of Great American Cities</em></h3>
+          <p class="note__meta">Jane Jacobs · 1961</p>
           <p class="note__rating mono small">in&nbsp;progress</p>
           <p class="note__voice">
-            portraits of people who kept their light on when the world dimmed.
-            essays that ask the right questions.
+            how cities actually work — sidewalks, mixed uses, short blocks,
+            and eyes on the street.
           </p>
         </article>
 
@@ -547,13 +729,15 @@
           </p>
         </article>
 
-        <article class="note note--build" style="--span:12">
+        <article class="note note--build" style="--span:5">
           <span class="note__tag">AT THE WORKBENCH</span>
-          <h3 class="note__title">Ghostfork</h3>
-          <p class="note__meta">data project · roki sasaki · npb → mlb · in progress</p>
+          <h3 class="note__title">Grading the locked predictions</h3>
+          <p class="note__meta">monsteradjustment · locked oct 1 · 2026 postseason → 2027 season</p>
           <p class="note__voice">
-            tracing the rookie arc — splitter shape, velocity dip, workload translation.
-            narrative-led, data-honest. variance97 lives; this is the next one.
+            the study is done; now the forecasts get checked against games that
+            hadn't happened yet. results go up on the
+            <a class="link" href="https://monster-adjustment.vercel.app" target="_blank" rel="noopener noreferrer">project site</a>
+            as they come in.
           </p>
         </article>
 
@@ -587,7 +771,7 @@
         <ul class="contact__links">
           <li><span class="mono small">GH</span><a href="https://github.com/KylanHuynh7" target="_blank" rel="noopener noreferrer" data-cursor>github.com/KylanHuynh7</a></li>
           <li><span class="mono small">LI</span><a href="https://www.linkedin.com/in/kylan-huynh7/" target="_blank" rel="noopener noreferrer" data-cursor>linkedin.com/in/kylan-huynh7</a></li>
-          <li><span class="mono small">CV</span><a href="https://drive.google.com/file/d/1eNmOADNJwb8WYFJuJCYg7Ji6FfUJ5Zpd/view?usp=sharing" target="_blank" rel="noopener noreferrer" data-cursor>resume&nbsp;(PDF)</a></li>
+          <li><span class="mono small">CV</span><a href="https://drive.google.com/file/d/1CFywqtUcEb5RN2Wv4hrCswZfnlM_Vs42/view?usp=sharing" target="_blank" rel="noopener noreferrer" data-cursor>resume&nbsp;(PDF)</a></li>
           <li><span class="mono small">LB</span><a href="https://letterboxd.com/kyyllannn/" target="_blank" rel="noopener noreferrer" data-cursor>letterboxd.com/kyyllannn</a></li>
         </ul>
       </div>
@@ -608,11 +792,11 @@
       </p>
       <p class="foot__col">
         <span class="foot__label mono">BUILT&nbsp;WITH</span>
-        html&nbsp;·&nbsp;css&nbsp;·&nbsp;js&nbsp;·&nbsp;0&nbsp;frameworks
+        html · css · js · 0&nbsp;frameworks
       </p>
       <p class="foot__col">
         <span class="foot__label mono">TYPE</span>
-        IBM&nbsp;Plex&nbsp;Mono&nbsp;·&nbsp;Plex&nbsp;Sans
+        Oswald · Inter · JetBrains Mono
       </p>
       <p class="foot__col">
         <span class="foot__label mono">REV</span>
@@ -648,6 +832,6 @@
     </div>
   </div>
 
-  <script src="script.js" defer></script>
+  <script src="script.js?v=4" defer></script>
 </body>
 </html>

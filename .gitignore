@@ -3,3 +3,6 @@
 
 # Editor / tooling
 .claude/
+
+# Local-only reference docs (not site content)
+overwritingprotocol.md

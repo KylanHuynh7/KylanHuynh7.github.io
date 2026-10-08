@@ -1,0 +1,70 @@
+{
+  "user": "kyyllannn",
+  "fetched": "2026-10-08T04:46:34.575Z",
+  "entries": [
+    {
+      "title": "The Spy Who Loved Me",
+      "year": "1977",
+      "rating": "★★★★",
+      "watched": "2026-10-05",
+      "rewatch": false,
+      "url": "https://letterboxd.com/kyyllannn/film/the-spy-who-loved-me/"
+    },
+    {
+      "title": "The Man with the Golden Gun",
+      "year": "1974",
+      "rating": "★★★",
+      "watched": "2026-09-26",
+      "rewatch": false,
+      "url": "https://letterboxd.com/kyyllannn/film/the-man-with-the-golden-gun/"
+    },
+    {
+      "title": "Sinister",
+      "year": "2012",
+      "rating": "★★★★",
+      "watched": "2026-09-25",
+      "rewatch": false,
+      "url": "https://letterboxd.com/kyyllannn/film/sinister/"
+    },
+    {
+      "title": "The Invisible Man",
+      "year": "2020",
+      "rating": "★★★",
+      "watched": "2026-09-24",
+      "rewatch": false,
+      "url": "https://letterboxd.com/kyyllannn/film/the-invisible-man-2020/"
+    },
+    {
+      "title": "Green Lantern: First Flight",
+      "year": "2009",
+      "rating": "★★★",
+      "watched": "2026-09-18",
+      "rewatch": true,
+      "url": "https://letterboxd.com/kyyllannn/film/green-lantern-first-flight/1/"
+    },
+    {
+      "title": "Green Lantern: First Flight",
+      "year": "2009",
+      "rating": "",
+      "watched": "2026-09-18",
+      "rewatch": false,
+      "url": "https://letterboxd.com/kyyllannn/film/green-lantern-first-flight/"
+    },
+    {
+      "title": "Live and Let Die",
+      "year": "1973",
+      "rating": "★",
+      "watched": "2026-09-18",
+      "rewatch": false,
+      "url": "https://letterboxd.com/kyyllannn/film/live-and-let-die/"
+    },
+    {
+      "title": "Diamonds Are Forever",
+      "year": "1971",
+      "rating": "★★",
+      "watched": "2026-09-07",
+      "rewatch": false,
+      "url": "https://letterboxd.com/kyyllannn/film/diamonds-are-forever/"
+    }
+  ]
+}

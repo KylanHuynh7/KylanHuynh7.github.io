@@ -34,12 +34,16 @@
   const yearEl = $('#year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // document.lastModified is the page's own publish time (GitHub Pages sends Last-Modified),
+  // so these show when the site actually changed rather than today's date.
   const fmtDate = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: '2-digit' });
-  const today = new Date();
+  const published = new Date(document.lastModified);
   const lastEdit = $('#last-edit');
   const nowUpdated = $('#now-updated');
-  if (lastEdit)  lastEdit.textContent  = fmtDate(today);
-  if (nowUpdated) nowUpdated.textContent = fmtDate(today);
+  if (!Number.isNaN(+published)) {
+    if (lastEdit)   lastEdit.textContent   = fmtDate(published);
+    if (nowUpdated) nowUpdated.textContent = fmtDate(published);
+  }
 
   /* ── 3. reveal on scroll (subtle) ─────────────────────── */
   const revealTargets = $$('section > .section-bar, section > .card, .log__row, .stack__group, .note, .dossier__name, .dossier__sheet, .dossier__transition, .contact__email, .contact__line, .work__lede, .now__lede');
@@ -155,52 +159,52 @@
       '  <em>mcdavid</em>     — variance97 mini-readout',
       '  <em>variance97</em>  — same as above',
       '  <em>contact</em>     — how to reach me',
-      '  <em>resume</em>      — link to resume',
+      '  <em>resume</em>      — open resume (PDF)',
       '  <em>open &lt;section&gt;</em> — scroll to a section',
       '  <em>whoami</em>      — visitor info',
       '  <em>ls</em> · <em>cat</em> · <em>echo</em> · <em>clear</em>',
     ].join('<br/>'),
 
     about: () => [
-      'kylan huynh · sophomore → junior · uc san diego',
+      'kylan huynh · junior · uc san diego',
       'data science b.s. · class of 2028',
       '',
       'I work on small, careful things — sports analytics,',
-      'research tools, and pipelines that respect the data.',
+      'ml research, and pipelines that respect the data.',
+      'basketball data analyst @ ucsd athletics ·',
+      'ml research assistant @ ucsd natural reserve system.',
       'currently looking for a summer \'27 internship.',
     ].join('<br/>'),
 
     projects: () => [
-      '  P-01  <em>variance97</em>          — McDavid sports-analytics deep dive',
-      '  P-02  <em>monsteradjustment</em>   — Roki Sasaki rookie-arc deep dive',
-      '  P-03  <em>saystroop</em>           — Stroop-effect web experiment + Whisper',
+      '  P-01  <em>variance97</em>          — McDavid in high-stakes hockey · live dashboard',
+      '  P-02  <em>floodiq</em>             — flood-risk scoring · DataHacks 2026 winner',
+      '  P-03  <em>monsteradjustment</em>   — Roki Sasaki, NPB → MLB · pre-registered',
+      '  P-04  <em>tilt</em>                — calibrated NHL ratings · live app',
+      '  P-05  <em>fixturefeed</em>         — self-updating NFL calendars',
+      '  P-06  <em>saystroop</em>           — voice-timed Stroop experiment · DSSS 2nd place',
+      '  P-07  <em>rosterwatch</em>         — DS3 fantasy-football project · mentor',
     ].join('<br/>'),
 
-    stack: () => 'Python · Pandas · NumPy · scikit-learn · SQL · R · Streamlit · Supabase · GEE · Jupyter · git · zsh',
+    stack: () => 'Python · Java · TypeScript · pandas · NumPy · SciPy · scikit-learn · Plotly · Streamlit · Next.js · Supabase · GEE · git',
 
     now: () => {
-      let watchLines = ['  watching   <em>(letterboxd feed unavailable)</em>'];
-      try {
-        const lbUser = $('#now-letterboxd')?.dataset.letterboxdUser;
-        const cached = lbUser && JSON.parse(localStorage.getItem(`lb:${lbUser}:v2`) || 'null');
-        const entries = cached?.entries;
-        if (Array.isArray(entries) && entries.length) {
-          watchLines = entries.slice(0, 3).map((e, i) => {
-            const label = i === 0 ? 'watching ' : '          ';
-            const yr    = e.year ? ` (${e.year})` : '';
-            const rt    = e.rating ? `     ${e.rating}` : '';
+      const watchLines = lbEntries.length
+        ? lbEntries.slice(0, 3).map((e, i) => {
+            const label = i === 0 ? 'watching ' : '         ';
+            const yr    = e.year ? ` (${escapeHtml(e.year)})` : '';
+            const rt    = e.rating ? `     ${escapeHtml(e.rating)}` : '';
             return `  ${label}  <em>${escapeHtml(e.title)}</em>${yr}${rt}`;
-          });
-        }
-      } catch { /* fall through to default */ }
+          })
+        : ['  watching   <em>(letterboxd diary unavailable)</em>'];
       return [
         'currently:',
         ...watchLines,
-        '  reading    <em>Men in Dark Times</em> — Arendt    in progress',
-        '  listening  <em>Ca$ino</em> — Baby Keem             on repeat',
-        '  building   <em>ghostfork</em>                     in progress',
+        '  reading    <em>The Death and Life of Great American Cities</em> — Jacobs',
+        '  mentoring  <em>rosterwatch</em> · DS3',
+        '  grading    <em>monsteradjustment</em> predictions',
         '',
-        'sports — see §02 (auto-updates with the calendar).',
+        'sports — see §05 (auto-updates with the calendar).',
       ].join('<br/>');
     },
 
@@ -227,11 +231,21 @@
 
     contact: () => 'email <em>huynh.kylan7@gmail.com</em> · or scroll to §06.',
 
-    resume: () => 'resume: drop a link here when you\'re ready.',
+    resume: () => {
+      const href = $('.contact__links a[href*="drive.google.com"]')?.href;
+      if (href) window.open(href, '_blank', 'noopener');
+      return href ? 'opening resume (PDF) in a new tab…' : 'resume: see §06.';
+    },
 
     whoami: () => `guest@dossier · session ${Math.random().toString(16).slice(2, 8)}`,
 
     ls: () => '01-dossier  02-work  03-log  04-stack  05-now  06-contact  README.md',
+
+    '007': () => [
+      '<span class="ascii">MI6 // EYES ONLY</span>',
+      'agent file: kylan huynh · clearance granted.',
+      '"sometimes the old ways are the best."',
+    ].join('<br/>'),
 
     cat: (arg) => arg === 'README.md'
       ? 'dossier · a portfolio by kylan huynh · 2026.<br/>quiet by design. data leaks through.'
@@ -315,17 +329,19 @@
   };
 
   /* ── 7. letterboxd diary → "on the couch" card ───────────
-     Pulls recent diary entries from a public Letterboxd RSS
-     feed via api.allorigins.win (corsproxy.io gates free
-     server-side requests now). Caches in localStorage for 1h.
+     Reads letterboxd.json, which a daily GitHub Action builds
+     from the public RSS feed (scripts/letterboxd.mjs). Same
+     origin, so no CORS proxy to break.
      ────────────────────────────────────────────────────── */
   const lbCard = $('#now-letterboxd');
+  let lbEntries = [];
   if (lbCard) {
-    const user = lbCard.dataset.letterboxdUser;
     const listEl = lbCard.querySelector('[data-lb-list]');
     const MAX_ITEMS = 5;
-    const CACHE_KEY = `lb:${user}:v2`;
-    const CACHE_TTL = 60 * 60 * 1000; // 1 hour
+    const fmtWatched = (iso) => {
+      const d = new Date(`${iso}T12:00:00`);
+      return Number.isNaN(+d) ? '' : d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).toLowerCase();
+    };
 
     const renderList = (entries) => {
       if (!listEl) return;
@@ -334,73 +350,23 @@
         return;
       }
       listEl.innerHTML = entries.slice(0, MAX_ITEMS).map((e) => {
-        const safeTitle = escapeHtml(e.title);
-        const yearStr   = e.year ? ` <span class="muted">(${escapeHtml(e.year)})</span>` : '';
-        const rating    = e.rating ? `<span class="note__diary-rating" aria-label="${escapeHtml(e.rating)}">${escapeHtml(e.rating)}</span>` : '<span class="note__diary-rating" aria-hidden="true"></span>';
-        return `<li class="note__diary-row"><span class="note__diary-title"><em>${safeTitle}</em>${yearStr}</span>${rating}</li>`;
+        const title   = `<em>${escapeHtml(e.title)}</em>`;
+        const linked  = /^https:\/\/letterboxd\.com\//.test(e.url || '')
+          ? `<a href="${escapeHtml(e.url)}" target="_blank" rel="noopener noreferrer">${title}</a>` : title;
+        const yearStr = e.year ? ` <span class="muted">(${escapeHtml(e.year)})</span>` : '';
+        const when    = e.watched ? `<span class="note__diary-date">${fmtWatched(e.watched)}</span>` : '';
+        const rating  = `<span class="note__diary-rating"${e.rating ? '' : ' aria-hidden="true"'}>${escapeHtml(e.rating || '')}</span>`;
+        return `<li class="note__diary-row">${when}<span class="note__diary-title">${linked}${yearStr}</span>${rating}</li>`;
       }).join('');
     };
 
-    const parseFeed = (xmlText) => {
-      const doc = new DOMParser().parseFromString(xmlText, 'application/xml');
-      const items = Array.from(doc.querySelectorAll('item'));
-      return items.map((item) => {
-        // Letterboxd namespaced fields are most reliable
-        const ns = 'https://letterboxd.com';
-        const filmTitle = item.getElementsByTagNameNS(ns, 'filmTitle')[0]?.textContent;
-        const filmYear  = item.getElementsByTagNameNS(ns, 'filmYear')[0]?.textContent;
-        const memberRating = item.getElementsByTagNameNS(ns, 'memberRating')[0]?.textContent;
-        const watched = item.getElementsByTagNameNS(ns, 'watchedDate')[0]?.textContent
-          || item.querySelector('pubDate')?.textContent || '';
-
-        // Fallback parse from <title> "Movie, YYYY - ★★★★½"
-        let title = filmTitle, year = filmYear, rating = '';
-        const raw = item.querySelector('title')?.textContent || '';
-        const m = raw.match(/^(.*?),\s*(\d{4})\s*-\s*(.+)$/);
-        if (!title && m) title = m[1];
-        if (!year  && m) year  = m[2];
-        if (m) rating = m[3].trim();
-        else if (memberRating) {
-          const n = parseFloat(memberRating);
-          if (!Number.isNaN(n)) {
-            const full = Math.floor(n);
-            const half = n - full >= 0.5;
-            rating = '★'.repeat(full) + (half ? '½' : '');
-          }
-        }
-
-        return { title: title || raw, year: year || '', rating, watched };
-      }).filter(e => e.title);
-    };
-
-    const fetchFeed = async () => {
-      const feed = `https://letterboxd.com/${user}/rss/`;
-      const proxied = `https://api.allorigins.win/raw?url=${encodeURIComponent(feed)}`;
-      const res = await fetch(proxied, { headers: { Accept: 'application/rss+xml, text/xml' } });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const text = await res.text();
-      const entries = parseFeed(text);
-      if (!entries.length) throw new Error('no items in feed');
-      return entries;
-    };
-
-    (async () => {
-      try {
-        const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
-        if (cached && Date.now() - cached.t < CACHE_TTL && Array.isArray(cached.entries)) {
-          renderList(cached.entries);
-          return;
-        }
-        const entries = await fetchFeed();
-        localStorage.setItem(CACHE_KEY, JSON.stringify({ t: Date.now(), entries }));
-        renderList(entries);
-      } catch (err) {
-        console.debug('[letterboxd] feed unavailable:', err.message);
-        if (listEl) {
-          listEl.innerHTML = '<li class="note__diary-row note__diary-row--placeholder"><span class="note__diary-title">diary unavailable — try refresh</span></li>';
-        }
-      }
-    })();
+    fetch('letterboxd.json', { cache: 'no-cache' })
+      .then((r) => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+      .then((data) => { lbEntries = data.entries || []; renderList(lbEntries); })
+      .catch((err) => {
+        console.debug('[letterboxd] diary unavailable:', err.message);
+        if (listEl) listEl.innerHTML = '<li class="note__diary-row note__diary-row--placeholder"><span class="note__diary-title">diary unavailable right now</span></li>';
+      });
   }
 
   termForm?.addEventListener('submit', (e) => {
