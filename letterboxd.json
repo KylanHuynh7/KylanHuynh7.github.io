@@ -1,7 +1,23 @@
 {
   "user": "kyyllannn",
-  "fetched": "2026-10-08T04:55:37.224Z",
+  "fetched": "2026-10-11T18:08:48.536Z",
   "entries": [
+    {
+      "title": "A Night at the Roxbury",
+      "year": "1998",
+      "rating": "★★★",
+      "watched": "2026-10-10",
+      "rewatch": false,
+      "url": "https://letterboxd.com/kyyllannn/film/a-night-at-the-roxbury/"
+    },
+    {
+      "title": "Skyfall",
+      "year": "2012",
+      "rating": "★★★★★",
+      "watched": "2026-10-10",
+      "rewatch": true,
+      "url": "https://letterboxd.com/kyyllannn/film/skyfall/1/"
+    },
     {
       "title": "The Spy Who Loved Me",
       "year": "1977",
@@ -49,22 +65,6 @@
       "watched": "2026-09-18",
       "rewatch": false,
       "url": "https://letterboxd.com/kyyllannn/film/green-lantern-first-flight/"
-    },
-    {
-      "title": "Live and Let Die",
-      "year": "1973",
-      "rating": "★",
-      "watched": "2026-09-18",
-      "rewatch": false,
-      "url": "https://letterboxd.com/kyyllannn/film/live-and-let-die/"
-    },
-    {
-      "title": "Diamonds Are Forever",
-      "year": "1971",
-      "rating": "★★",
-      "watched": "2026-09-07",
-      "rewatch": false,
-      "url": "https://letterboxd.com/kyyllannn/film/diamonds-are-forever/"
     }
   ]
 }
