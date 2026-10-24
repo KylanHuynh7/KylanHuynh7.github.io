@@ -1,7 +1,15 @@
 {
   "user": "kyyllannn",
-  "fetched": "2026-10-14T18:03:24.135Z",
+  "fetched": "2026-10-24T16:40:55.223Z",
   "entries": [
+    {
+      "title": "She's All That",
+      "year": "1999",
+      "rating": "★★",
+      "watched": "2026-10-23",
+      "rewatch": false,
+      "url": "https://letterboxd.com/kyyllannn/film/shes-all-that/"
+    },
     {
       "title": "Moonraker",
       "year": "1979",
@@ -57,14 +65,6 @@
       "watched": "2026-09-24",
       "rewatch": false,
       "url": "https://letterboxd.com/kyyllannn/film/the-invisible-man-2020/"
-    },
-    {
-      "title": "Green Lantern: First Flight",
-      "year": "2009",
-      "rating": "★★★",
-      "watched": "2026-09-18",
-      "rewatch": true,
-      "url": "https://letterboxd.com/kyyllannn/film/green-lantern-first-flight/1/"
     }
   ]
 }
