@@ -1,7 +1,15 @@
 {
   "user": "kyyllannn",
-  "fetched": "2026-10-24T16:40:55.223Z",
+  "fetched": "2026-10-25T17:05:15.917Z",
   "entries": [
+    {
+      "title": "Unfaithful",
+      "year": "2002",
+      "rating": "★★★★",
+      "watched": "2026-10-24",
+      "rewatch": false,
+      "url": "https://letterboxd.com/kyyllannn/film/unfaithful/"
+    },
     {
       "title": "She's All That",
       "year": "1999",
@@ -57,14 +65,6 @@
       "watched": "2026-09-25",
       "rewatch": false,
       "url": "https://letterboxd.com/kyyllannn/film/sinister/"
-    },
-    {
-      "title": "The Invisible Man",
-      "year": "2020",
-      "rating": "★★★",
-      "watched": "2026-09-24",
-      "rewatch": false,
-      "url": "https://letterboxd.com/kyyllannn/film/the-invisible-man-2020/"
     }
   ]
 }
