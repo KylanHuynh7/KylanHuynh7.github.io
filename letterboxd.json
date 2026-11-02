@@ -1,7 +1,15 @@
 {
   "user": "kyyllannn",
-  "fetched": "2026-10-25T17:05:15.917Z",
+  "fetched": "2026-11-02T22:21:55.135Z",
   "entries": [
+    {
+      "title": "Coraline",
+      "year": "2009",
+      "rating": "★★★★",
+      "watched": "2026-11-01",
+      "rewatch": false,
+      "url": "https://letterboxd.com/kyyllannn/film/coraline/"
+    },
     {
       "title": "Unfaithful",
       "year": "2002",
@@ -57,14 +65,6 @@
       "watched": "2026-09-26",
       "rewatch": false,
       "url": "https://letterboxd.com/kyyllannn/film/the-man-with-the-golden-gun/"
-    },
-    {
-      "title": "Sinister",
-      "year": "2012",
-      "rating": "★★★★",
-      "watched": "2026-09-25",
-      "rewatch": false,
-      "url": "https://letterboxd.com/kyyllannn/film/sinister/"
     }
   ]
 }
