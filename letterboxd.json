@@ -1,7 +1,15 @@
 {
   "user": "kyyllannn",
-  "fetched": "2026-11-05T20:42:15.083Z",
+  "fetched": "2026-11-11T20:14:09.787Z",
   "entries": [
+    {
+      "title": "Octopussy",
+      "year": "1983",
+      "rating": "★★★★",
+      "watched": "2026-11-10",
+      "rewatch": false,
+      "url": "https://letterboxd.com/kyyllannn/film/octopussy/"
+    },
     {
       "title": "Resident Evil",
       "year": "2026",
@@ -57,14 +65,6 @@
       "watched": "2026-10-10",
       "rewatch": false,
       "url": "https://letterboxd.com/kyyllannn/film/a-night-at-the-roxbury/"
-    },
-    {
-      "title": "Skyfall",
-      "year": "2012",
-      "rating": "★★★★★",
-      "watched": "2026-10-10",
-      "rewatch": true,
-      "url": "https://letterboxd.com/kyyllannn/film/skyfall/1/"
     }
   ]
 }
