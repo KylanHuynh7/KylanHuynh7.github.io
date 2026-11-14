@@ -1,7 +1,15 @@
 {
   "user": "kyyllannn",
-  "fetched": "2026-11-12T20:54:12.537Z",
+  "fetched": "2026-11-14T18:45:43.883Z",
   "entries": [
+    {
+      "title": "The Living Daylights",
+      "year": "1987",
+      "rating": "★★★★",
+      "watched": "2026-11-13",
+      "rewatch": false,
+      "url": "https://letterboxd.com/kyyllannn/film/the-living-daylights/"
+    },
     {
       "title": "A View to a Kill",
       "year": "1985",
@@ -57,14 +65,6 @@
       "watched": "2026-10-23",
       "rewatch": false,
       "url": "https://letterboxd.com/kyyllannn/film/shes-all-that/"
-    },
-    {
-      "title": "Moonraker",
-      "year": "1979",
-      "rating": "★",
-      "watched": "2026-10-13",
-      "rewatch": false,
-      "url": "https://letterboxd.com/kyyllannn/film/moonraker/"
     }
   ]
 }
